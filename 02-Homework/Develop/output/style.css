@@ -1,0 +1,27 @@
+
+body {
+    background-color: black;
+}
+
+.navBar {
+    background-color: wheat;
+
+}
+
+.card {
+    margin: 10px;
+}
+.engineer {
+    background-color: green;
+    border: white solid;
+}
+
+.intern {
+    background-color: blue;
+    border: red solid;
+    color:white;
+}
+
+.card-body {
+    color: black;
+}
