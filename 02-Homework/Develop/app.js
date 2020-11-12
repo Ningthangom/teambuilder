@@ -17,7 +17,7 @@ const teamMembers = [];
     inquirer.prompt([
         {
             name: "name",
-            message: "Engineer's Name?",
+            message: "Engineer's Name: ",
             type: "input",
         },
         {
@@ -38,7 +38,7 @@ const teamMembers = [];
         ]) .then( data => {
                 let engineer = new Engineer(data.name, data.id, data.email, data.github);
                 teamMembers.push(engineer);
-                console.log(teamMembers);
+                console.log("The engineer has been added successfully");
                 // need to activate the array here
                 selectTeamMember();
 });
@@ -70,7 +70,7 @@ intern = () => {
         ]) .then( data => {
                 let interns = new Intern(data.name, data.id, data.email, data.school);
                 teamMembers.push(interns);
-                console.log(teamMembers);
+                console.log("The intern has been added successfully");
                 // need to activate the array here
                 selectTeamMember();
 });
@@ -101,7 +101,7 @@ manager = () => {
         ]) .then( data => {
                 let manager = new Manager(data.name, data.id, data.email,data.officeNumber);
                 teamMembers.push(manager);
-                console.log(teamMembers);
+                console.log("The manager has been added successfully");
                 // need to activate the array here
                 selectTeamMember();
 });
@@ -111,7 +111,7 @@ manager = () => {
         name: "addMember",
         message: "Add a team member: ",
         type: "list",
-        choices: ['Manager','Intern','Engineer','Finished']
+        choices: ['Manager','Engineer','Intern','Finished']
     }
 
 function selectTeamMember ()  {
@@ -148,8 +148,6 @@ function selectTeamMember ()  {
  
 
  selectTeamMember();  
-/* engineer();
-intern(); */
 
 
 
