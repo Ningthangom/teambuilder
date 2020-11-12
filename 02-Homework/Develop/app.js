@@ -17,22 +17,22 @@ const teamMembers = [];
     inquirer.prompt([
         {
             name: "name",
-            message: "What is your Name?",
+            message: "Engineer's Name?",
             type: "input",
         },
         {
             name: "id",
-            message: "What is your Employee's ID Number?",
+            message: "Engineer's Employee's ID Number: ",
             type: "number",
         },
         {
             name: "email",
-            message: "What is your Email Address?",
+            message: "Egineer's Email Address: ",
             type: "input"
         },
         {
             name: "github",
-            message: "What is your github username?",
+            message: "Engineer's github username: ",
             type: "input",
         },
         ]) .then( data => {
@@ -49,22 +49,22 @@ intern = () => {
     inquirer.prompt([
         {
             name: "name",
-            message: "What is your Name?",
+            message: "Intern's Name: ",
             type: "input",
         },
         {
             name: "id",
-            message: "What is your Employee's ID Number (must be a Number Input)?",
+            message: "Intern's Employee's ID Number (must be a Number Input): ",
             type: "number",
         },
         {
             name: "email",
-            message: "What is your Email Address?",
+            message: "Intern's Email Address: ",
             type: "input"
         },
         {
             name: "school",
-            message: "What school are you from?",
+            message: "Intern's school's name: ",
              type: "input",
         },
         ]) .then( data => {
@@ -80,22 +80,22 @@ manager = () => {
     inquirer.prompt([
         {
             name: "name",
-            message: "What is your Name?",
+            message: " Name : ",
             type: "input",
         },
         {
             name: "id",
-            message: "What is your Employee's ID Number (must be a Number Input)?",
+            message: "Your employee's ID Number (must be a Number Input): ",
             type: "number",
         },
         {
             name: "email",
-            message: "What is your Email Address?",
+            message: "Email Address: ",
             type: "input"
         },
         {
             name: "officeNumber",
-            message: "What is your office number?",
+            message: "Your office number: ",
             type: "number",
         },
         ]) .then( data => {
@@ -106,27 +106,27 @@ manager = () => {
                 selectTeamMember();
 });
 }
- let addMoreMembers = 
+ let addTeamMembers = 
     {
-        name: "moreMembers",
-        message: "Are there any other members in your team?",
+        name: "addMember",
+        message: "Add a team member: ",
         type: "list",
         choices: ['Manager','Intern','Engineer','Finished']
     }
 
 function selectTeamMember ()  {
-    inquirer.prompt(addMoreMembers).then((answer)=>{
+    inquirer.prompt(addTeamMembers).then((answer)=>{
         //if the user choose Egineer from prompt
-     if (answer.moreMembers === "Engineer"){
+     if (answer.addMember === "Engineer"){
          //enginer() function will be called
                 engineer();
-            } else if (answer.moreMembers === "Intern") {
+            } else if (answer.addMember === "Intern") {
                 intern();
 
-            } else if (answer.moreMembers === "Manager") {
+            } else if (answer.addMember === "Manager") {
                 manager();
 
-            } else if (answer.moreMembers === "Finished") {
+            } else if (answer.addMember === "Finished") {
                 console.log("Finished")
                /*  for writing the file */
                 const OUTPUT_DIR = path.resolve(__dirname, "output");
